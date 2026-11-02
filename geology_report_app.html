@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#e8f4eb">
+<title>두근두근 지질 탐험 | 화성 지질답사 보고서</title>
+<style>
+:root{--ink:#233f38;--ink2:#45635a;--muted:#778c82;--green:#277d68;--dark:#174d42;--mint:#e9f5e9;--cream:#fffaf0;--line:#dce8dd;--orange:#f3b36b;--blue:#d7edf0;--shadow:0 16px 50px rgba(33,72,56,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"Pretendard Variable","Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:radial-gradient(circle at 0 0,#d9efe2,transparent 36%),radial-gradient(circle at 95% 7%,#fdf0d1,transparent 30%),#f5f7f0;font-size:15px;line-height:1.6}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #8ac9b0;outline-offset:2px}textarea{resize:vertical}svg{display:block}a{color:inherit}.hide{display:none!important}
+.top{width:min(1480px,calc(100% - 56px));margin:0 auto;padding:30px 0 18px;display:flex;align-items:center;justify-content:space-between;gap:20px}.identity{display:flex;align-items:center;gap:13px}.brand-icon{height:50px;width:50px;border-radius:17px;background:#fff;display:grid;place-items:center;box-shadow:0 7px 25px #9cb9a577;border:1px solid #e7eddf}.brand-icon svg{width:41px;height:41px}.identity h1{margin:0;font-size:19px;letter-spacing:-.8px;line-height:1.2;font-weight:900}.identity p{margin:3px 0 0;color:#709087;font-size:12px;font-weight:700;letter-spacing:.2px}.top-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.outline-btn,.primary-btn,.small-btn{border:0;border-radius:13px;padding:11px 16px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:850;font-size:13px;transition:.2s transform,.2s background,.2s box-shadow;white-space:nowrap}.outline-btn:hover,.primary-btn:hover,.small-btn:hover{transform:translateY(-2px)}.outline-btn{background:#ffffffbb;color:#385b4e;border:1px solid #dce8db}.primary-btn{background:var(--dark);color:white;box-shadow:0 7px 19px #1c60472b}.primary-btn:hover{background:#236957}.small-btn{background:#e7f3e8;color:#275949;padding:8px 12px;font-size:12px}.ico{width:16px;height:16px;display:inline-block;flex-shrink:0}
+.hero{width:min(1480px,calc(100% - 56px));margin:2px auto 24px;border-radius:29px;background:#d7ebdd;min-height:222px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:space-between;padding:32px 52px;border:1px solid #c9e2d3}.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:48px;background:linear-gradient(0deg,#c4dfca85,transparent);pointer-events:none}.hero-copy{position:relative;z-index:2;max-width:660px}.hero-tag{display:inline-flex;align-items:center;gap:8px;background:#ffffffa8;border:1px solid #ffffffd8;color:#36785b;border-radius:100px;padding:5px 12px;font-size:12px;font-weight:900;letter-spacing:.3px}.hero h2{font-size:clamp(27px,3vw,43px);line-height:1.26;letter-spacing:-1.8px;font-weight:950;margin:17px 0 9px}.hero h2 em{color:#318f73;font-style:normal}.hero p{margin:0;color:#5f7e70;font-size:14px;font-weight:600}.hero-art{height:205px;width:330px;position:absolute;right:4.7%;bottom:-10px;z-index:1}.hero-art .hero-dino{height:205px;width:205px;position:absolute;right:35px;bottom:-10px;filter:drop-shadow(0 9px 3px #75ab8960)}.art-leaf{position:absolute;bottom:11px;width:105px;height:105px}.art-leaf.left{left:5px}.art-leaf.right{right:0;transform:scaleX(-1)}.hero-circle{position:absolute;width:235px;height:235px;background:#e8f5d7;border-radius:50%;right:10px;top:-20px}.hero-stars{position:absolute;right:175px;top:25px;color:#ffcc76;font-size:30px;letter-spacing:20px}.report-stat{width:min(1480px,calc(100% - 56px));margin:0 auto 17px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#6e8578;font-size:13px}.report-stat strong{color:#2d7660}.state-group{display:flex;align-items:center;gap:9px}.state-dot{height:8px;width:8px;border-radius:100%;background:#63b68d;box-shadow:0 0 0 4px #ddf3e5}.progress-rail{height:8px;width:170px;border-radius:50px;background:#e0e9dd;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#78b79a,#267e65);border-radius:40px;transition:width .3s}
+.workspace{width:min(1480px,calc(100% - 56px));margin:0 auto 70px;display:grid;grid-template-columns:minmax(400px,625px) minmax(530px,1fr);gap:23px;align-items:start}.editor{background:white;border:1px solid #e3ebe2;box-shadow:var(--shadow);border-radius:24px;overflow:hidden;min-width:0}.editor-head{padding:24px 27px 16px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.eyebrow{color:#3f9a7e;font-size:11px;font-weight:950;letter-spacing:1.3px}.editor-head h3{margin:4px 0 4px;letter-spacing:-.8px;font-weight:950;font-size:24px}.editor-head p{font-size:12px;color:#8ba096;margin:0}.step-index{font-weight:900;color:#539c7b;background:#eaf5ee;border:1px solid #d8ebdd;border-radius:12px;padding:6px 10px;font-size:12px}.steps{padding:5px 22px 20px;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.step{border:1px solid transparent;background:#f2f6f2;border-radius:12px;color:#82948b;font-size:11px;font-weight:800;min-height:52px;padding:7px 3px;display:grid;gap:1px;align-content:center;justify-items:center;transition:.2s}.step:hover{background:#e9f4ed}.step.active{background:#e4f3e9;border-color:#a7d8ba;color:#217456}.step b{font-size:13px}.step .step-name{white-space:nowrap}.form-body{padding:0 27px 16px}.form-panel{display:none;animation:fade .18s ease}.form-panel.active{display:block}@keyframes fade{from{opacity:.3;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.form-intro{background:#f4f9f4;border:1px solid #e5eee5;padding:15px 17px;border-radius:14px;font-size:13px;color:#557367;margin-bottom:22px}.form-intro b{color:#2e795f}.field{margin:0 0 19px}.field-label{display:flex;gap:6px;align-items:center;font-size:13px;font-weight:900;margin-bottom:7px}.required{font-weight:700;color:#da9272;font-size:11px}.hint{color:#879a90;font-size:11px;display:block;margin:6px 0 0;line-height:1.55}.field input,.field textarea{width:100%;background:#fcfdfb;border:1px solid #dfe8df;border-radius:12px;padding:12px 14px;color:#254438;outline:none;transition:border-color .16s,background .16s}.field input:focus,.field textarea:focus{border-color:#79bc9d;background:white;box-shadow:0 0 0 3px #e8f5ed}.field input::placeholder,.field textarea::placeholder{color:#afbbb2}.field textarea{min-height:95px;line-height:1.8}.field textarea.tall{min-height:130px}.field textarea.short{min-height:74px}.form-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.form-row.two{grid-template-columns:repeat(2,1fr)}.place-card{background:#f8faf7;border:1px solid #e5ebe2;border-radius:17px;padding:17px;margin-bottom:17px}.place-head{display:flex;gap:11px;align-items:center;margin-bottom:15px}.place-icon{height:41px;width:41px;background:#e6f3e9;color:#327c64;border-radius:13px;display:grid;place-items:center;font-size:20px}.place-head h4{margin:0;font-size:15px;font-weight:950}.place-head p{margin:0;font-size:11px;color:#84998c}.place-card .field:last-child{margin-bottom:0}.prompt{display:block;background:#fff9ed;color:#98703e;border:1px solid #f7e9ca;border-radius:12px;padding:12px;margin:10px 0 20px;font-size:12px}.photo-slot{border:2px dashed #c8dccd;border-radius:17px;background:#f9fcf9;padding:18px;margin-bottom:14px}.photo-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.photo-row strong{font-size:13px}.photo-row p{margin:2px 0 0;color:#8ba195;font-size:11px}.photo-display{display:none;margin-top:13px;max-height:230px;max-width:100%;object-fit:cover;border-radius:12px}.photo-display.visible{display:block}.photo-actions{display:flex;gap:6px;align-items:center}.photo-input{display:none}.photo-slot .field{margin:14px 0 0}.footer-controls{border-top:1px solid #eff2ed;padding:18px 27px 24px;display:flex;justify-content:space-between;gap:12px}.footer-controls button{min-width:112px}.footer-controls .primary-btn{margin-left:auto}.footer-note{background:#f8faf6;border-top:1px solid #ecf1e9;padding:13px 27px;color:#8a9d8e;font-size:11px;display:flex;align-items:center;justify-content:space-between;gap:8px}.footer-note span{display:flex;gap:6px;align-items:center}
+.preview-shell{min-width:0;position:sticky;top:18px}.preview-toolbar{display:flex;align-items:center;justify-content:space-between;gap:7px;background:#fff;padding:13px 15px;border-radius:16px 16px 0 0;border:1px solid #e3ebe2;border-bottom:0}.preview-toolbar strong{font-size:13px;display:flex;align-items:center;gap:8px}.preview-toolbar span{font-size:11px;color:#8da196}.preview-scroll{border-radius:0 0 19px 19px;padding:20px;background:#e8ede7;border:1px solid #e0e7df;box-shadow:var(--shadow);max-height:calc(100vh - 94px);overflow:auto}.paper{background:#fffefa;max-width:794px;margin:0 auto;min-height:1025px;box-shadow:0 7px 24px #224b3218;padding:45px 49px 50px;color:#30493e;position:relative;overflow:hidden}.paper:before{content:"";position:absolute;top:0;left:0;right:0;height:9px;background:linear-gradient(90deg,#4caa88 0 50%,#efb971 50% 73%,#b6dbcd 73%)}.paper-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding-bottom:19px;border-bottom:2px solid #33574b}.paper-kicker{font-size:10px;letter-spacing:1.8px;font-weight:900;color:#449476}.paper-heading h2{font-size:26px;letter-spacing:-1.3px;color:#233f34;margin:7px 0 5px;font-weight:950;line-height:1.3}.paper-sub{color:#7c9084;font-size:11px;margin:0}.paper-mascot{width:92px;height:92px;flex:0 0 auto;margin-top:-9px}.identity-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #d9e5da;border-radius:10px;overflow:hidden;margin:19px 0 24px;font-size:12px}.identity-cell{display:flex;min-height:39px;border-bottom:1px solid #d9e5da}.identity-cell:nth-last-child(-n+2){border-bottom:0}.identity-cell:nth-child(odd){border-right:1px solid #d9e5da}.identity-cell b{background:#edf5ed;min-width:72px;display:flex;align-items:center;padding:9px 10px;color:#476c5b;font-size:11px;flex-shrink:0}.identity-cell span{padding:9px 10px;word-break:break-word}.report-section{margin:0 0 23px;break-inside:avoid;page-break-inside:avoid}.report-title{display:flex;align-items:center;gap:9px;margin:0 0 10px;font-weight:950;font-size:15px;color:#245e4a}.report-title .number{height:24px;width:24px;display:grid;place-items:center;font-size:12px;border-radius:8px;background:#d7ecde;color:#276c55}.report-title:after{content:"";height:1px;background:#d6e6db;flex:1;margin-left:2px}.report-answer{font-size:12px;line-height:1.85;padding:0 4px 0 34px;white-space:pre-wrap;word-break:break-word}.report-answer.missing{color:#b5bcb4;font-style:italic}.answer-label{font-weight:850;font-size:11px;color:#4e806b;margin:8px 0 3px 34px}.note-card{border:1px solid #dfebe0;background:#f7faf5;border-radius:10px;padding:11px 14px;margin:0 0 12px 33px;break-inside:avoid}.note-card strong{font-size:12px;color:#336c56;display:block;margin-bottom:7px}.note-card .report-answer{padding-left:0}.note-card .answer-label{margin-left:0}.split-notes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-left:33px}.split-notes .note-card{margin:0}.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-left:33px}.photo-paper{margin:0;break-inside:avoid}.photo-paper img{width:100%;max-height:245px;object-fit:contain;border-radius:8px;background:#eff4ec;border:1px solid #e1eadf}.photo-paper figcaption{font-size:10px;color:#6b8374;line-height:1.55;margin-top:4px;white-space:pre-wrap}.photo-empty{padding:19px;border:1px dashed #ccdbce;border-radius:10px;color:#b4c1b5;font-size:11px;text-align:center}.paper-foot{font-size:10px;color:#88a08c;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e0e8db;margin-top:25px;padding-top:12px}.paper-foot .leaf{color:#69a68a}.bottom-banner{width:min(1480px,calc(100% - 56px));margin:-35px auto 40px;text-align:center;color:#8ea392;font-size:12px}.bottom-banner strong{color:#4d8e70}.mobile-switch{display:none}.toast{position:fixed;z-index:99;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:.2s;background:#1e4d3f;color:#fff;border-radius:13px;padding:11px 18px;box-shadow:0 10px 35px #193e3547;font-size:13px;font-weight:800}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1190px){.workspace{grid-template-columns:minmax(350px,1fr) minmax(420px,1fr)}.paper{padding:32px 29px}.hero{padding:30px 35px}.hero-art{right:2%}}@media(max-width:940px){.top,.hero,.report-stat,.workspace,.bottom-banner{width:min(720px,calc(100% - 28px))}.hero{min-height:185px;padding:25px 25px}.hero-copy{max-width:calc(100% - 130px)}.hero h2{font-size:30px}.hero-art{transform:scale(.76);transform-origin:right bottom;right:-20px}.workspace{display:block}.editor{display:block}.preview-shell{display:none;position:static}.workspace.show-preview .editor{display:none}.workspace.show-preview .preview-shell{display:block}.preview-scroll{max-height:none}.mobile-switch{display:flex;margin:0 auto 15px;width:min(720px,calc(100% - 28px));background:#e1ece1;border-radius:14px;padding:5px;gap:5px}.mobile-switch button{flex:1;border:0;background:transparent;border-radius:10px;padding:10px;font-weight:850;color:#6b8576}.mobile-switch button.active{background:white;color:#236b50;box-shadow:0 3px 10px #224b3220}.preview-shell .preview-toolbar{border-radius:15px 15px 0 0}.paper{max-width:650px}.report-stat{margin-bottom:12px}.bottom-banner{margin:20px auto 40px}}
+@media(max-width:540px){.top{padding:18px 0}.identity h1{font-size:16px}.identity p{font-size:10px}.brand-icon{height:42px;width:42px}.top-actions .outline-btn{display:none}.top-actions .primary-btn{padding:10px 12px}.hero{border-radius:22px;min-height:155px;padding:22px 19px}.hero h2{font-size:24px;letter-spacing:-1px;margin:9px 0}.hero-tag{font-size:10px;padding:4px 8px}.hero p{font-size:11px;max-width:210px}.hero-copy{max-width:calc(100% - 87px)}.hero-art{right:-8px;transform:scale(.55)}.report-stat{font-size:11px}.progress-rail{width:65px}.report-stat{gap:6px}.report-stat>.state-group:last-child{gap:5px;white-space:nowrap;flex:0 0 auto}.report-stat>.state-group:first-child{min-width:0}.editor-head{padding:20px 17px 13px}.editor-head h3{font-size:20px}.steps{padding:0 12px 15px;gap:3px}.step{font-size:9px;min-height:50px}.step b{font-size:12px}.form-body{padding:0 17px 14px}.form-row{gap:7px}.footer-controls{padding:16px}.footer-controls button{min-width:85px;padding:9px}.footer-note{padding:12px 15px;font-size:10px}.preview-scroll{padding:9px}.paper{padding:26px 19px;min-height:860px}.paper-heading h2{font-size:21px}.paper-mascot{height:70px;width:70px}.identity-cell b{min-width:52px;padding:8px 5px;font-size:10px}.identity-cell span{padding:8px 6px;font-size:10px}.report-section{margin-bottom:19px}.split-notes{grid-template-columns:1fr}.photo-grid{grid-template-columns:1fr}.report-title{font-size:13px}.note-card{margin-left:18px}.split-notes,.photo-grid{margin-left:18px}.report-answer{padding-left:18px}}
+/* Optional fallback print styling; the PDF download button uses the built-in offline PDF generator. */
+@page{size:A4 portrait;margin:13mm 14mm 14mm}
+@media print{html,body{padding:0!important;margin:0!important;background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.top,.hero,.report-stat,.editor,.preview-toolbar,.bottom-banner,.mobile-switch,.toast{display:none!important}.workspace{display:block!important;width:100%!important;margin:0!important;padding:0!important}.preview-shell{display:block!important;width:100%!important;position:static!important;max-width:none!important}.preview-scroll{border:0!important;border-radius:0!important;background:transparent!important;max-height:none!important;overflow:visible!important;padding:0!important;box-shadow:none!important}.paper{padding:0!important;box-shadow:none!important;width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;overflow:visible!important}.paper:before{display:none}.paper-heading{margin-top:1mm}.paper-heading h2{font-size:24px}.report-section{break-inside:avoid-page;page-break-inside:avoid}.note-card{break-inside:avoid-page}.paper-foot{break-inside:avoid;page-break-inside:avoid}.photo-paper img{max-height:65mm}.report-answer.missing{display:none}.photo-empty{display:none}.paper-sub{font-size:11px}}
+
+/* Download-recovery panel: accessible even when the browser blocks automatic saves. */
+.pdf-ready{width:min(1480px,calc(100% - 56px));margin:0 auto 18px;display:flex;align-items:center;gap:16px;justify-content:space-between;flex-wrap:wrap;border:2px solid #7bbb9e;background:#f0fff5;color:#204e3c;padding:17px 21px;border-radius:18px;box-shadow:0 8px 28px rgba(41,95,67,.08)}
+.pdf-ready[hidden]{display:none!important}.pdf-ready h3{margin:0 0 6px;font-size:17px}.pdf-ready p{margin:0;font-size:13px;line-height:1.55}.pdf-ready-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.pdf-ready-actions a{display:inline-block;text-decoration:none;border-radius:13px;padding:12px 17px;font-weight:800;font-size:14px;color:white;background:#207458;min-height:44px}.pdf-ready-actions a.open-link{background:white;color:#246a55;border:1px solid #78ac95}.pdf-ready small{font-size:12px;color:#517663;display:block;margin-top:5px}.pdf-ready a:focus-visible{outline:3px solid #e69d47;outline-offset:3px}
+@media(max-width:940px){.pdf-ready{width:calc(100% - 28px);margin-bottom:14px}.pdf-ready-actions{width:100%}.pdf-ready-actions a{flex:1;text-align:center}}
+</style>
+</head>
+<body>
+<!-- Original hand-drawn vector mascot, embedded for offline use. -->
+<svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden"><defs>
+<symbol id="dino" viewBox="0 0 210 210"><ellipse cx="104" cy="192" rx="70" ry="8" fill="#2f7c6260"/><path d="M48 130C27 119 14 133 14 145c13-6 27 6 36 19" fill="#6abf99" stroke="#347e65" stroke-width="4" stroke-linejoin="round"/><path d="M67 79 51 67 51 91 39 85 44 108" fill="#92d2a4"/><path d="M68 45 80 25 91 42 106 20 119 43 135 29 144 57" fill="#89ca9c" stroke="#387d63" stroke-width="3" stroke-linejoin="round"/><path d="M53 107c0-37 18-72 64-72 34 0 64 20 65 61 3 17-6 31-23 41 6 32-7 52-45 53-52 2-86-28-75-65" fill="#8fd6aa" stroke="#367f63" stroke-width="5"/><path d="M98 120c21-19 44-14 58 0 12 16 8 45-9 57-20 14-55 0-53-26" fill="#c9ebbd"/><path d="M148 62c-7-12-20-10-26 2" fill="none" stroke="#346f5d" stroke-width="4" stroke-linecap="round"/><ellipse cx="160" cy="83" rx="8" ry="10" fill="#23483f"/><circle cx="163" cy="80" r="3" fill="white"/><ellipse cx="181" cy="101" rx="4" ry="3" fill="#378c6c"/><ellipse cx="153" cy="111" rx="11" ry="6" fill="#ef9e91" opacity=".78"/><path d="M160 119q11 8 20-1" fill="none" stroke="#39755e" stroke-width="3" stroke-linecap="round"/><path d="M71 128c-2 14 8 19 17 14m66-5c13 0 21-8 21-17" fill="none" stroke="#347e65" stroke-width="6" stroke-linecap="round"/><path d="M83 167c-2 15-3 24 11 24h14m28-24c-1 16 0 24 14 24h13" fill="none" stroke="#357a64" stroke-width="8" stroke-linecap="round"/><circle cx="74" cy="100" r="6" fill="#73c594"/><circle cx="86" cy="84" r="4" fill="#73c594"/><circle cx="66" cy="116" r="4" fill="#73c594"/></symbol>
+<symbol id="fern" viewBox="0 0 100 100"><path d="M10 95q31-31 36-86" fill="none" stroke="#569e76" stroke-width="4" stroke-linecap="round"/><path d="M42 31Q6 3 14 44Q22 56 42 31ZM37 47Q2 28 9 65Q20 70 37 47ZM29 65Q0 50 6 83Q21 86 29 65ZM46 30Q68 0 69 29Q62 41 46 30ZM41 47Q75 23 75 51Q61 62 41 47ZM34 66Q66 44 67 70Q47 81 34 66Z" fill="#78b68c"/></symbol>
+<symbol id="sparkle" viewBox="0 0 24 24"><path fill="currentColor" d="m12 1 2.9 8.1L23 12l-8.1 2.9L12 23l-2.9-8.1L1 12l8.1-2.9z"/></symbol>
+</defs></svg>
+<header class="top">
+ <div class="identity"><div class="brand-icon"><svg viewBox="0 0 210 210" role="img" aria-label="웃는 초록 공룡"><use href="#dino"/></svg></div><div><h1>두근두근 지질 탐험</h1><p>화성 지질답사 · 나만의 탐구 기록실</p></div></div>
+ <div class="top-actions"><button type="button" class="outline-btn" id="backupBtn" title="작성한 내용을 파일로 보관">기록 백업</button><button type="button" class="primary-btn" id="pdfTopBtn"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>PDF 다운로드</button></div>
+</header>
+<section class="hero" aria-label="지질답사 보고서 소개"><div class="hero-copy"><div class="hero-tag">✦ 지구의 시간을 찾아 떠난 하루</div><h2>오늘의 발견을<br><em>나만의 보고서</em>로!</h2><p>보고서를 작성하면 오른쪽에 바로 완성돼요. 🌿</p></div><div class="hero-art" aria-hidden="true"><div class="hero-circle"></div><div class="hero-stars">✦ ✳</div><svg class="art-leaf left"><use href="#fern"/></svg><svg class="art-leaf right"><use href="#fern"/></svg><svg class="hero-dino"><use href="#dino"/></svg></div></section>
+<div class="report-stat"><div class="state-group"><span class="state-dot"></span><span><strong id="saveState">자동 저장 중</strong> · 이 브라우저에 기록을 보관해요</span></div><div class="state-group"><span id="progressLabel">0% 완성</span><div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div></div></div>
+<aside id="pdfReady" class="pdf-ready" hidden aria-live="polite" role="status">
+ <div><h3>🦕 PDF 보고서가 완성됐어요!</h3><p>자동 다운로드가 안 됐다면 아래 <b>파일 받기</b>를 직접 눌러 주세요.</p><small id="pdfReadyName"></small></div>
+ <div class="pdf-ready-actions"><a id="pdfManualLink" href="#" download="report.pdf">⬇ PDF 파일 받기</a><a class="open-link" id="pdfOpenLink" href="#" target="_blank" rel="noopener">↗ PDF 열기</a></div>
+</aside>
+<div class="mobile-switch" role="group" aria-label="화면 전환"><button id="showEdit" class="active" type="button">✎ 작성하기</button><button id="showPreview" type="button">▤ 보고서 미리보기</button></div>
+<main class="workspace" id="workspace">
+ <section class="editor" aria-label="보고서 작성 영역">
+  <div class="editor-head"><div><span class="eyebrow">MY FIELD JOURNAL</span><h3 id="editorTitle">탐험가 정보</h3><p id="editorSub">먼저 나의 이름과 답사 날짜를 적어 주세요.</p></div><span class="step-index" id="stepIndex">1 / 5</span></div>
+  <nav class="steps" aria-label="작성 단계"><button class="step active" type="button" data-step="0"><b>01</b><span class="step-name">기본 정보</span></button><button class="step" type="button" data-step="1"><b>02</b><span class="step-name">답사 돌아보기</span></button><button class="step" type="button" data-step="2"><b>03</b><span class="step-name">현장 관찰</span></button><button class="step" type="button" data-step="3"><b>04</b><span class="step-name">비교·해석</span></button><button class="step" type="button" data-step="4"><b>05</b><span class="step-name">마무리</span></button></nav>
+  <form id="reportForm" autocomplete="on"><div class="form-body">
+   <div class="form-panel active" data-panel="0"><div class="form-intro">🦕 <b>안녕, 지질 탐험가!</b><br>친구나 선생님도 알아볼 수 있도록 기본 정보부터 적어 보자.</div><div class="field"><label class="field-label" for="school">학교 이름 <span class="required">선택</span></label><input id="school" name="school" placeholder="예: ○○고등학교"></div><div class="form-row"><div class="field"><label class="field-label" for="grade">학년</label><input id="grade" name="grade" inputmode="numeric" placeholder="예: 2"></div><div class="field"><label class="field-label" for="classroom">반</label><input id="classroom" name="classroom" inputmode="numeric" placeholder="예: 3"></div><div class="field"><label class="field-label" for="number">번호</label><input id="number" name="number" inputmode="numeric" placeholder="예: 12"></div></div><div class="field"><label class="field-label" for="name">이름 <span class="required">추천</span></label><input id="name" name="name" placeholder="이름을 입력하세요"></div><div class="field"><label class="field-label" for="date">답사 날짜</label><input type="date" id="date" name="date"></div><div class="prompt">💡 답사 장소는 <b>고정리 공룡알 화석산지</b>와 <b>우음도</b>로 설정되어 있어요.</div></div>
+   <div class="form-panel" data-panel="1"><div class="form-intro">🔎 <b>답사에서 본 장면을 떠올려 보자!</b><br>이미 다녀온 답사예요. 억지로 질문을 만들 필요 없이, 실제 기억에 남는 모습을 기록하면 돼요.</div><div class="field"><label class="field-label" for="question">가장 기억에 남는 지질 현상이나 장면</label><textarea id="question" name="question" class="tall" placeholder="예: 고정리에서 살펴본 화석의 모습, 우음도에서 본 암석이나 지층의 특징"></textarea><span class="hint">화석, 암석, 지층, 지형 등 현장에서 실제로 본 것 중 하나를 골라 적어 보세요.</span></div><div class="field"><label class="field-label" for="reason">그 장면이 기억에 남는 이유</label><textarea id="reason" name="reason" placeholder="어떤 모습이 특별했는지, 현장 설명을 들으며 무엇을 이해했는지 적어 보세요."></textarea></div></div>
+   <div class="form-panel" data-panel="2"><div class="form-intro">🪨 <b>눈으로 본 것을 자세히!</b><br>설명으로 들은 내용과 내가 직접 관찰한 내용은 구분해서 기록해 보자.</div><article class="place-card"><div class="place-head"><div class="place-icon">🥚</div><div><h4>① 고정리 공룡알 화석산지</h4><p>첫 번째 탐사 지점</p></div></div><div class="field"><label class="field-label" for="goObserved">무엇을 관찰했나요?</label><textarea id="goObserved" name="goObserved" class="tall" placeholder="암석의 색, 표면, 층의 모습, 화석과 주변 지형 등 직접 본 것을 적어 보세요."></textarea></div><div class="field"><label class="field-label" for="goThought">관찰하면서 떠오른 생각</label><textarea id="goThought" name="goThought" placeholder="관찰 내용에서 어떤 점을 알 수 있을지 생각해 보세요."></textarea></div></article><article class="place-card"><div class="place-head"><div class="place-icon">🏝️</div><div><h4>② 우음도</h4><p>두 번째 탐사 지점</p></div></div><div class="field"><label class="field-label" for="wooObserved">무엇을 관찰했나요?</label><textarea id="wooObserved" name="wooObserved" class="tall" placeholder="암석, 지층, 퇴적 구조, 지형 등 기억에 남는 특징을 적어 보세요."></textarea></div><div class="field"><label class="field-label" for="wooThought">관찰하면서 떠오른 생각</label><textarea id="wooThought" name="wooThought" placeholder="이곳의 지질 특징을 어떻게 설명할 수 있을까요?"></textarea></div></article></div>
+   <div class="form-panel" data-panel="3"><div class="form-intro">🌏 <b>두 장소를 나란히 살펴보자.</b><br>관찰한 사실을 근거로 공통점과 차이점을 찾아 보자.</div><div class="field"><label class="field-label" for="same">공통으로 관찰한 특징</label><textarea id="same" name="same" placeholder="두 장소에서 비슷하게 나타난 특징은 무엇인가요?"></textarea></div><div class="field"><label class="field-label" for="different">서로 달랐던 특징</label><textarea id="different" name="different" class="tall" placeholder="암석의 모습, 지층, 주변 환경 등을 비교해 적어 보세요."></textarea></div><div class="field"><label class="field-label" for="interpretation">지질학적으로 어떻게 해석할 수 있을까요?</label><textarea id="interpretation" name="interpretation" class="tall" placeholder="관찰 결과를 바탕으로 두 장소의 형성 과정이나 과거 환경을 추측해 보세요."></textarea></div><div class="field"><label class="field-label" for="evidence">그렇게 생각한 근거</label><textarea id="evidence" name="evidence" placeholder="어떤 관찰 내용이나 현장 설명을 근거로 삼았나요?"></textarea><span class="hint">잘 모르겠다면 아는 만큼만 적어도 괜찮아요. 추측과 사실을 구분하는 게 중요해요.</span></div></div>
+   <div class="form-panel" data-panel="4"><div class="form-intro">✨ <b>답사를 마치고 생각을 정리해 보자!</b><br>새롭게 알게 된 점과 내 생각이 어떻게 달라졌는지 구체적으로 적어 보자.</div><div class="field"><label class="field-label" for="highlight">답사를 다녀온 뒤 달라진 생각</label><textarea id="highlight" name="highlight" class="tall" placeholder="예: 지층을 보고 나서 암석이 만들어진 환경을 추측할 수 있다는 것을 알게 되었다."></textarea></div><div class="field"><label class="field-label" for="learned">이번 답사에서 새롭게 알게 된 점</label><textarea id="learned" name="learned" class="tall" placeholder="현장에서 관찰하거나 설명을 듣고 알게 된 내용을 자신의 말로 적어 보세요."></textarea></div><div class="field"><label class="field-label" for="nextQuestion">추가로 찾아본 내용 <span class="required">선택</span></label><textarea id="nextQuestion" name="nextQuestion" class="short" placeholder="답사 뒤에 따로 찾아본 내용이 있다면 적어 보세요. 없으면 비워 두어도 돼요."></textarea></div><div class="photo-slot"><div class="photo-row"><div><strong>📸 현장 사진 1</strong><p>사진은 선택 사항이에요.</p></div><div class="photo-actions"><label for="photo1" class="small-btn" style="cursor:pointer">사진 선택</label><button type="button" class="small-btn" id="removePhoto1" title="사진 삭제">×</button><input class="photo-input" type="file" id="photo1" accept="image/*"></div></div><img class="photo-display" id="photoPreview1" alt="선택한 현장 사진 1"><div class="field"><label class="field-label" for="caption1">사진 설명</label><input id="caption1" name="caption1" placeholder="무엇을 찍은 사진인가요?"></div></div><div class="photo-slot"><div class="photo-row"><div><strong>📸 현장 사진 2</strong><p>없다면 비워 두어도 됩니다.</p></div><div class="photo-actions"><label for="photo2" class="small-btn" style="cursor:pointer">사진 선택</label><button type="button" class="small-btn" id="removePhoto2" title="사진 삭제">×</button><input class="photo-input" type="file" id="photo2" accept="image/*"></div></div><img class="photo-display" id="photoPreview2" alt="선택한 현장 사진 2"><div class="field"><label class="field-label" for="caption2">사진 설명</label><input id="caption2" name="caption2" placeholder="어떤 관찰 내용과 관련된 사진인가요?"></div></div><div class="prompt">🦕 글을 모두 적었다면 <b>보고서 미리보기</b>에서 확인하고 PDF 파일로 다운로드해요!</div></div>
+  </div></form>
+  <div class="footer-controls"><button type="button" class="outline-btn" id="prevBtn" disabled>← 이전</button><button type="button" class="primary-btn" id="nextBtn">다음 단계 →</button></div>
+  <div class="footer-note"><span>🔒 작성 내용은 서버로 전송되지 않아요.</span><span><button type="button" id="importBtn" style="background:none;border:0;font-size:11px;color:#679078;text-decoration:underline;padding:0">백업 불러오기</button><span aria-hidden="true"> · </span><button type="button" id="clearBtn" style="background:none;border:0;font-size:11px;color:#a37d6f;text-decoration:underline;padding:0">새로 작성</button></span></div><input class="hide" type="file" id="importFile" accept="application/json,.json">
+ </section>
+ <section class="preview-shell" aria-label="완성 보고서 미리보기"><div class="preview-toolbar"><strong>📄 실시간 보고서 미리보기 <span>· A4</span></strong><button type="button" class="small-btn" id="pdfPreviewBtn">↓ PDF 다운로드</button></div><div class="preview-scroll"><article class="paper" id="paper" aria-live="polite"></article></div></section>
+</main>
+<p class="bottom-banner">🌱 <strong>관찰한 사실을 자기 말로 기록하는 것</strong>이 가장 중요해요. · PDF 다운로드 버튼을 누르면 보고서 파일을 만들어요. 다운로드가 안 되면 위에 나타나는 <strong>PDF 파일 받기</strong>를 누르세요. 그 파일을 패들릿에 첨부해 제출하세요.</p>
+<div role="status" aria-live="polite" class="toast" id="toast"></div>
+<script>
+(()=>{'use strict';
+const STORE='hwaseong-dino-report-v2';
+const OLD_STORE='hwaseong-dino-report-v1';
+const fields=['school','grade','classroom','number','name','date','question','reason','goObserved','goThought','wooObserved','wooThought','same','different','interpretation','evidence','highlight','learned','nextQuestion','caption1','caption2'];
+const tracked=fields.filter(k=>!['school','grade','classroom','number','date','caption1','caption2','nextQuestion'].includes(k));
+let state=Object.fromEntries(fields.map(k=>[k,'']));state.photo1='';state.photo2='';let step=0;let toastTimeout;
+const $=id=>document.getElementById(id);const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const or=(v,missing='아직 작성하지 않았어요.')=>v&&String(v).trim()?esc(v):`<span class="missing">${missing}</span>`;
+function ans(v){return `<div class="report-answer${v&&String(v).trim()?'':' missing'}">${or(v)}</div>`}
+function sec(n,title,html){return `<section class="report-section"><h3 class="report-title"><span class="number">${n}</span>${title}</h3>${html}</section>`}
+function labelled(label,value){return `<div class="answer-label">${label}</div>${ans(value)}`}
+function place(name,obs,thought){return `<div class="note-card"><strong>${name}</strong>${labelled('관찰한 내용',obs)}${labelled('관찰하며 떠오른 생각',thought)}</div>`}
+function photocell(n){const src=state['photo'+n];return src?`<figure class="photo-paper"><img src="${src}" alt="현장 사진 ${n}"><figcaption>${esc(state['caption'+n]||`현장 사진 ${n}`)}</figcaption></figure>`:''}
+function draw(){
+const identity=`${esc(state.grade||'　')}학년 ${esc(state.classroom||'　')}반 ${esc(state.number||'　')}번`;
+const photoHtml=photocell(1)+photocell(2);
+$('paper').innerHTML=`<header class="paper-heading"><div><div class="paper-kicker">GEOLOGY FIELD JOURNAL</div><h2>화성 지질답사 보고서</h2><p class="paper-sub">고정리 공룡알 화석산지 · 우음도</p></div><svg class="paper-mascot" role="img" aria-label="웃는 공룡 캐릭터"><use href="#dino"/></svg></header>
+<div class="identity-grid"><div class="identity-cell"><b>학교</b><span>${esc(state.school||'　')}</span></div><div class="identity-cell"><b>학번</b><span>${identity}</span></div><div class="identity-cell"><b>이름</b><span>${esc(state.name||'　')}</span></div><div class="identity-cell"><b>답사 날짜</b><span>${esc(state.date?state.date.replace(/-/g,'. ')+' .':'　')}</span></div></div>
+${sec('01','답사에서 기억에 남는 장면',labelled('기억에 남는 지질 현상이나 장면',state.question)+labelled('그 장면이 기억에 남는 이유',state.reason))}
+${sec('02','답사 장소별 관찰 기록',place('01 · 고정리 공룡알 화석산지',state.goObserved,state.goThought)+place('02 · 우음도',state.wooObserved,state.wooThought))}
+${sec('03','두 장소 비교하기',`<div class="split-notes"><div class="note-card"><strong>공통점</strong>${ans(state.same)}</div><div class="note-card"><strong>차이점</strong>${ans(state.different)}</div></div>`)}
+${sec('04','지질학적으로 생각해 보기',labelled('관찰을 바탕으로 한 해석',state.interpretation)+labelled('그렇게 생각한 근거',state.evidence))}
+${sec('05','답사를 마치며',labelled('답사 후 달라진 생각',state.highlight)+labelled('새롭게 알게 된 점',state.learned)+(String(state.nextQuestion||'').trim()?labelled('추가로 찾아본 내용',state.nextQuestion):''))}
+${photoHtml?sec('06','현장 사진 기록',`<div class="photo-grid">${photoHtml}</div>`):''}
+<footer class="paper-foot"><span>FIELD NOTES · HWASEONG</span><span class="leaf">✦ 나의 눈으로 보고, 나의 말로 기록한 지구 이야기</span></footer>`;
+const filled=tracked.filter(k=>String(state[k]||'').trim()).length;const pct=Math.round(filled/tracked.length*100);$('progressLabel').textContent=pct+'% 완성';$('progressFill').style.width=pct+'%';
+}
+let saveTimer;
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(state));$('saveState').textContent='자동 저장됨'}catch(e){$('saveState').textContent='저장 공간 부족 · 백업 권장';showToast('브라우저 저장 공간이 부족해요. 기록 백업을 이용해 주세요.')}}
+function update(){for(const k of fields)state[k]=$(k).value;draw();$('saveState').textContent='저장 중…';clearTimeout(saveTimer);saveTimer=setTimeout(persist,320)}
+function restore(){try{let raw=localStorage.getItem(STORE);if(!raw){const old=localStorage.getItem(OLD_STORE);if(old){const previous=JSON.parse(old);if(previous&&typeof previous==='object'){for(const k of [...fields,'photo1','photo2'])if(!['question','reason','highlight','nextQuestion'].includes(k)&&typeof previous[k]==='string')state[k]=previous[k];return;}}return;}const data=JSON.parse(raw);if(!data||typeof data!=='object')return;for(const k of [...fields,'photo1','photo2'])if(typeof data[k]==='string')state[k]=data[k]}catch(e){} }
+function sync(){for(const k of fields)$(k).value=state[k]||'';for(const n of [1,2]){const img=$('photoPreview'+n);img.src=state['photo'+n]||'';img.classList.toggle('visible',!!state['photo'+n])}draw();}
+const stepsTitle=['탐험가 정보','답사 돌아보기','현장 관찰 기록','비교하고 해석하기','탐구 마무리'];const stepsDesc=['먼저 나의 이름과 답사 날짜를 적어 주세요.','현장에서 기억에 남는 장면을 떠올려 봐요.','고정리와 우음도에서 본 것을 자세히 기록해요.','관찰한 내용을 근거로 생각을 펼쳐 봐요.','새롭게 알게 된 점과 달라진 생각을 정리해 봐요.'];
+function goStep(i){step=Math.min(4,Math.max(0,i));document.querySelectorAll('.form-panel').forEach(p=>p.classList.toggle('active',Number(p.dataset.panel)===step));document.querySelectorAll('.step').forEach(s=>{let active=Number(s.dataset.step)===step;s.classList.toggle('active',active);s.setAttribute('aria-current',active?'step':'false')});$('editorTitle').textContent=stepsTitle[step];$('editorSub').textContent=stepsDesc[step];$('stepIndex').textContent=(step+1)+' / 5';$('prevBtn').disabled=step===0;$('prevBtn').style.opacity=step===0?.45:1;$('nextBtn').textContent=step===4?'보고서 확인 →':'다음 단계 →';if(window.innerWidth<=940)window.scrollTo({top:0,behavior:'smooth'});}
+function switchMobile(preview){$('workspace').classList.toggle('show-preview',preview);$('showEdit').classList.toggle('active',!preview);$('showPreview').classList.toggle('active',preview);window.scrollTo({top:0,behavior:'smooth'});}
+function showToast(message){const el=$('toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>el.classList.remove('show'),3300)}
+/* Self-contained, offline PDF generator. Renders the journal to high-resolution A4 canvases,
+   then packages the JPEG pages into a standards-compliant PDF without print dialogs or CDNs. */
+const PDF_W = 1240, PDF_H = 1754, PDF_SCALE = 1.30;
+const PDF_COLORS={ink:'#263f34',muted:'#6d8377',green:'#287a61',soft:'#e6f3e8',border:'#d5e5d9',paper:'#fffefa',pale:'#f6faf5'};
+const PDF_FONT='"NanumSquare", "Noto Sans CJK KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif';
+const pdfEncoder=new TextEncoder();
+function pdfFont(size,weight=400){return `${weight} ${size}px ${PDF_FONT}`;}
+function pdfRound(ctx,x,y,w,h,r,fill,stroke){
+ ctx.beginPath();r=Math.min(r,w/2,h/2);
+ ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+ ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+ ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+ ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
+ if(fill){ctx.fillStyle=fill;ctx.fill();}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=1.7;ctx.stroke();}
+}
+function pdfEllipsis(ctx,text,maxWidth){let s=String(text||'');if(ctx.measureText(s).width<=maxWidth)return s;while(s.length&&ctx.measureText(s+'…').width>maxWidth)s=s.slice(0,-1);return s+'…';}
+function pdfWrap(ctx,text,maxWidth){
+ const out=[];const paragraphs=String(text??'').replace(/\r\n?/g,'\n').split('\n');
+ for(const paragraph of paragraphs){
+  if(!paragraph.trim()){out.push('');continue;}
+  let line='';
+  const tokens=paragraph.match(/\S+|\s+/g)||[];
+  for(let token of tokens){
+   if(/^\s+$/.test(token)){if(line&&!line.endsWith(' '))line+=' ';continue;}
+   const combined=line+token;
+   if(ctx.measureText(combined).width<=maxWidth){line=combined;continue;}
+   if(line.trim()){out.push(line.trimEnd());line='';}
+   if(ctx.measureText(token).width<=maxWidth){line=token;continue;}
+   // Split very long unbroken strings (URLs, pasted text) on grapheme boundaries.
+   const chars=(typeof Intl!=='undefined'&&Intl.Segmenter)?Array.from(new Intl.Segmenter('ko',{granularity:'grapheme'}).segment(token),x=>x.segment):Array.from(token);
+   let partial='';
+   for(const ch of chars){if(partial&&ctx.measureText(partial+ch).width>maxWidth){out.push(partial);partial=ch;}else partial+=ch;}
+   line=partial;
+  }
+  out.push(line.trimEnd());
+ }
+ return out.length?out:[''];
+}
+function pdfLoadImage(src){return new Promise(resolve=>{
+ if(!src){resolve(null);return;}const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>resolve(null);img.src=src;
+});}
+function pdfDinoImage(){const symbol=document.querySelector('#dino');if(!symbol)return Promise.resolve(null);
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="210" height="210" viewBox="0 0 210 210">${symbol.innerHTML}</svg>`;
+ return pdfLoadImage('data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg));
+}
+function pdfJpegBytes(dataURL){const raw=atob(dataURL.split(',')[1]),bytes=new Uint8Array(raw.length);for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);return bytes;}
+function pdfAssemble(images){
+ const bytes=[];let offset=0;const locations=[0];
+ function add(part){const b=typeof part==='string'?pdfEncoder.encode(part):part;bytes.push(b);offset+=b.length;}
+ function obj(id,head,stream){locations[id]=offset;add(`${id} 0 obj\n`);if(stream){add(head+`\nstream\n`);add(stream);add('\nendstream\n');}else add(head+'\n');add('endobj\n');}
+ add(pdfEncoder.encode('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n'));
+ obj(1,'<< /Type /Catalog /Pages 2 0 R >>');
+ const pageIDs=images.map((_,i)=>3+i*3);
+ obj(2,`<< /Type /Pages /Kids [${pageIDs.map(i=>i+' 0 R').join(' ')}] /Count ${images.length} >>`);
+ for(let i=0;i<images.length;i++){
+  const p=3+i*3,c=p+1,im=p+2,img=images[i];
+  obj(p,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /ProcSet [/PDF /ImageC] /XObject << /Im${i+1} ${im} 0 R >> >> /Contents ${c} 0 R >>`);
+  const cmd=pdfEncoder.encode(`q\n595.28 0 0 841.89 0 0 cm\n/Im${i+1} Do\nQ\n`);
+  obj(c,`<< /Length ${cmd.length} >>`,cmd);
+  obj(im,`<< /Type /XObject /Subtype /Image /Width ${img.width} /Height ${img.height} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${img.bytes.length} >>`,img.bytes);
+ }
+ const xref=offset;add(`xref\n0 ${locations.length}\n0000000000 65535 f \n`);
+ for(let i=1;i<locations.length;i++)add(`${String(locations[i]).padStart(10,'0')} 00000 n \n`);
+ add(`trailer\n<< /Size ${locations.length} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`);
+ return new Blob(bytes,{type:'application/pdf'});
+}
+async function generateDinoPDF(data){
+ const colors=PDF_COLORS;
+ const dino=await pdfDinoImage();
+ const pictures=await Promise.all([pdfLoadImage(data.photo1),pdfLoadImage(data.photo2)]);
+ const pages=[];let canvas,ctx,y,number=0;
+ const margin=94,wide=PDF_W-2*margin,limit=1607;
+ function finalize(){
+  if(!canvas)return;
+  ctx.strokeStyle=colors.border;ctx.lineWidth=1.7;ctx.beginPath();ctx.moveTo(margin,1660);ctx.lineTo(PDF_W-margin,1660);ctx.stroke();
+  ctx.font=pdfFont(17,700);ctx.fillStyle='#799a89';ctx.textBaseline='alphabetic';
+  ctx.fillText('FIELD NOTES  ·  HWASEONG',margin,1693);
+  ctx.textAlign='right';ctx.fillText(`나의 지질 탐험 기록  •  ${number}`,PDF_W-margin,1693);ctx.textAlign='left';
+  pages.push({width:canvas.width,height:canvas.height,bytes:pdfJpegBytes(canvas.toDataURL('image/jpeg',.89))});
+ }
+ function nextPage(){
+  finalize();number++;
+  canvas=document.createElement('canvas');canvas.width=Math.round(PDF_W*PDF_SCALE);canvas.height=Math.round(PDF_H*PDF_SCALE);
+  ctx=canvas.getContext('2d',{alpha:false});ctx.scale(PDF_SCALE,PDF_SCALE);
+  ctx.fillStyle=colors.paper;ctx.fillRect(0,0,PDF_W,PDF_H);
+  ctx.fillStyle='#60ac86';ctx.fillRect(0,0,625,13);ctx.fillStyle='#f0c88b';ctx.fillRect(625,0,300,13);ctx.fillStyle='#b6dccc';ctx.fillRect(925,0,315,13);
+  ctx.textBaseline='alphabetic';ctx.textAlign='left';
+  if(number===1){
+   ctx.font=pdfFont(19,800);ctx.fillStyle=colors.green;ctx.fillText('GEOLOGY FIELD JOURNAL',margin,115);
+   ctx.font=pdfFont(48,900);ctx.fillStyle=colors.ink;ctx.fillText('화성 지질답사 보고서',margin,178);
+   ctx.font=pdfFont(23,500);ctx.fillStyle=colors.muted;ctx.fillText('고정리 공룡알 화석산지 · 우음도',margin,220);
+   if(dino)ctx.drawImage(dino,948,70,178,178);
+   ctx.strokeStyle='#315a49';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(margin,262);ctx.lineTo(PDF_W-margin,262);ctx.stroke();
+   identity();y=465;
+  }else{
+   ctx.font=pdfFont(18,700);ctx.fillStyle=colors.green;ctx.fillText('GEOLOGY FIELD JOURNAL',margin,100);
+   ctx.font=pdfFont(30,900);ctx.fillStyle=colors.ink;ctx.fillText('화성 지질답사 보고서',margin,146);
+   if(dino)ctx.drawImage(dino,1012,67,92,92);
+   ctx.strokeStyle=colors.border;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(margin,176);ctx.lineTo(PDF_W-margin,176);ctx.stroke();
+   y=219;
+  }
+ }
+ function identity(){
+  const top=295,cellW=wide/2,cellH=63;
+  pdfRound(ctx,margin,top,wide,cellH*2,10,'#ffffff',colors.border);
+  ctx.strokeStyle=colors.border;ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(margin+cellW,top);ctx.lineTo(margin+cellW,top+cellH*2);ctx.moveTo(margin,top+cellH);ctx.lineTo(margin+wide,top+cellH);ctx.stroke();
+  const cells=[['학교',data.school||''],['학번',`${data.grade||'　'}학년 ${data.classroom||'　'}반 ${data.number||'　'}번`],['이름',data.name||''],['답사 날짜',data.date?data.date.replace(/-/g,'. '):'']];
+  cells.forEach(([label,value],i)=>{
+   const cx=margin+(i%2)*cellW,cy=top+Math.floor(i/2)*cellH;
+   ctx.fillStyle='#edf5ee';ctx.fillRect(cx+1,cy+1,124,cellH-2);
+   ctx.fillStyle='#436c58';ctx.font=pdfFont(20,800);ctx.fillText(label,cx+15,cy+39);
+   ctx.fillStyle=colors.ink;ctx.font=pdfFont(22,600);ctx.fillText(pdfEllipsis(ctx,value||' ',cellW-155),cx+143,cy+40);
+  });
+ }
+ function space(min){if(y+min>limit)nextPage();}
+ function section(n,title){
+  space(110);y+=17;
+  pdfRound(ctx,margin,y-6,45,42,10,colors.soft);
+  ctx.font=pdfFont(22,900);ctx.fillStyle=colors.green;ctx.fillText(n,margin+8,y+23);
+  ctx.font=pdfFont(29,900);ctx.fillStyle=colors.ink;ctx.fillText(title,margin+60,y+25);
+  const tw=ctx.measureText(title).width;
+  ctx.strokeStyle=colors.border;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(Math.min(margin+wide-20,margin+80+tw),y+15);ctx.lineTo(margin+wide,y+15);ctx.stroke();
+  y+=66;
+ }
+ function subheading(title){space(72);ctx.fillStyle=colors.green;ctx.font=pdfFont(24,800);ctx.fillText(title,margin+12,y+28);y+=49;}
+ function field(label,value){
+  const content=String(value||'').trim()||'—';
+  const x=margin+6,w=wide-12,pad=26,bodyW=w-pad*2;
+  ctx.font=pdfFont(23,500);const lines=pdfWrap(ctx,content,bodyW);
+  let index=0,part=0;
+  while(index<lines.length){
+   space(148);
+   const room=limit-y;
+   const available=Math.max(1,Math.floor((room-82)/37));
+   const count=Math.min(lines.length-index,available);
+   const h=82+count*37;
+   pdfRound(ctx,x,y,w,h,13,colors.pale,colors.border);
+   ctx.font=pdfFont(19,800);ctx.fillStyle=colors.green;
+   ctx.fillText(label+(part?' (이어서)':''),x+pad,y+33);
+   ctx.font=pdfFont(23,500);ctx.fillStyle=content==='—'?'#a5b6aa':colors.ink;
+   for(let j=0;j<count;j++)ctx.fillText(lines[index+j],x+pad,y+71+j*37);
+   y+=h+16;index+=count;part++;
+  }
+ }
+ async function photo(n){
+  const img=pictures[n-1];if(!img)return;
+  const caption=String(data['caption'+n]||`현장 사진 ${n}`);
+  ctx.font=pdfFont(21,500);
+  const captionLines=pdfWrap(ctx,caption,wide-65);
+  const imgW=wide-42, maxH=520, naturalW=img.naturalWidth||img.width,naturalH=img.naturalHeight||img.height;
+  const factor=Math.min(imgW/naturalW,maxH/naturalH);
+  const dw=Math.round(naturalW*factor),dh=Math.round(naturalH*factor);
+  const blockH=dh+captionLines.length*32+90;
+  space(Math.min(blockH,limit-250));
+  if(blockH>limit-y)nextPage();
+  pdfRound(ctx,margin+6,y,wide-12,blockH,14,colors.pale,colors.border);
+  ctx.font=pdfFont(22,800);ctx.fillStyle=colors.green;ctx.fillText(`현장 사진 ${n}`,margin+29,y+36);
+  ctx.drawImage(img,margin+(wide-dw)/2,y+51,dw,dh);
+  ctx.font=pdfFont(20,500);ctx.fillStyle=colors.muted;
+  captionLines.forEach((line,i)=>ctx.fillText(line,margin+29,y+dh+78+i*32));
+  y+=blockH+20;
+ }
+ nextPage();
+ section('01','답사에서 기억에 남는 장면');
+ field('기억에 남는 지질 현상이나 장면',data.question);field('그 장면이 기억에 남는 이유',data.reason);
+ section('02','답사 장소별 관찰 기록');
+ subheading('01 · 고정리 공룡알 화석산지');field('관찰한 내용',data.goObserved);field('관찰하며 떠오른 생각',data.goThought);
+ subheading('02 · 우음도');field('관찰한 내용',data.wooObserved);field('관찰하며 떠오른 생각',data.wooThought);
+ section('03','두 장소 비교하기');field('공통점',data.same);field('차이점',data.different);
+ section('04','지질학적으로 생각해 보기');field('관찰을 바탕으로 한 해석',data.interpretation);field('그렇게 생각한 근거',data.evidence);
+ section('05','답사를 마치며');field('답사 후 달라진 생각',data.highlight);field('새롭게 알게 된 점',data.learned);
+ if(String(data.nextQuestion||'').trim())field('추가로 찾아본 내용',data.nextQuestion);
+ if(pictures.some(Boolean)){section('06','현장 사진 기록');for(let n=1;n<=2;n++)await photo(n);}
+ finalize();return pdfAssemble(pages);
+}
+let pdfBusy=false; let latestPdfUrl=null;
+function clearReady(){if(latestPdfUrl){URL.revokeObjectURL(latestPdfUrl);latestPdfUrl=null;}$('pdfReady').hidden=true;}
+
+async function makePdf(){
+ if(pdfBusy)return;update();persist();
+ if(!state.name.trim()){
+  if(!confirm('이름이 아직 비어 있어요. 그래도 PDF로 저장할까요?')){goStep(0);if(window.innerWidth<=940)switchMobile(false);$('name').focus();return;}
+ }
+ pdfBusy=true;
+ const buttons=[$('pdfTopBtn'),$('pdfPreviewBtn')];const original=buttons.map(b=>b.textContent);
+ buttons.forEach(b=>{b.disabled=true;b.textContent='PDF 만드는 중…';});
+ try{
+  showToast('보고서를 PDF 파일로 만드는 중이에요.');
+  await new Promise(resolve=>setTimeout(resolve,40));
+  const blob=await generateDinoPDF({...state});
+  const clean=(state.name||'학생').trim().replace(/[\\/:*?"<>|\x00-\x1f]/g,'').slice(0,36)||'학생';
+  const filename=`화성_지질답사_보고서_${clean}.pdf`;
+  clearReady();
+  latestPdfUrl=URL.createObjectURL(blob);
+  const manual=$('pdfManualLink'); manual.href=latestPdfUrl;manual.download=filename;
+  $('pdfOpenLink').href=latestPdfUrl;
+  $('pdfReadyName').textContent=`파일 이름: ${filename} · ${(blob.size/1024/1024).toFixed(1)}MB`;
+  $('pdfReady').hidden=false;
+  $('pdfReady').scrollIntoView({behavior:'smooth',block:'center'});
+  // Some browsers allow this automatic attempt; others require a second, real tap.
+  const a=document.createElement('a');a.href=latestPdfUrl;a.download=filename;document.body.appendChild(a);a.click();a.remove();
+  showToast('PDF 파일이 준비됐어요. 저장이 안 됐다면 초록색 ‘PDF 파일 받기’를 눌러 주세요.');
+ }catch(e){console.error('PDF generation error',e);showToast('PDF 저장에 실패했어요. 다른 브라우저에서 다시 시도해 주세요.');}
+ finally{pdfBusy=false;buttons.forEach((b,i)=>{b.disabled=false;b.textContent=original[i];});}
+}
+
+function downloadBlob(content,fileName,type){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=fileName;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1200)}
+async function imageToData(file){if(!file.type.startsWith('image/'))throw Error('이미지 파일을 선택해 주세요.');if(file.size>20*1024*1024)throw Error('20MB 이하의 사진을 선택해 주세요.');const data=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});return await new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>{const max=1150,scale=Math.min(1,max/Math.max(img.width,img.height));const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);resolve(canvas.toDataURL('image/jpeg',.73))};img.onerror=()=>reject(Error('사진을 불러올 수 없어요.'));img.src=data})}
+restore();sync();goStep(0);
+fields.forEach(k=>$(k).addEventListener('input',()=>{if(latestPdfUrl)clearReady();}));
+fields.forEach(k=>$(k).addEventListener('input',update));document.querySelectorAll('.step').forEach(b=>b.addEventListener('click',()=>goStep(Number(b.dataset.step))));$('prevBtn').addEventListener('click',()=>goStep(step-1));$('nextBtn').addEventListener('click',()=>{if(step<4)goStep(step+1);else{if(window.innerWidth<=940)switchMobile(true);else document.querySelector('.preview-scroll').scrollTo({top:0,behavior:'smooth'});showToast('보고서를 확인하고 PDF 다운로드를 눌러 주세요!')}});
+$('showEdit').addEventListener('click',()=>switchMobile(false));$('showPreview').addEventListener('click',()=>switchMobile(true));$('pdfTopBtn').addEventListener('click',makePdf);$('pdfPreviewBtn').addEventListener('click',makePdf);
+for(const n of [1,2]){$('photo'+n).addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{state['photo'+n]=await imageToData(f);$('photoPreview'+n).src=state['photo'+n];$('photoPreview'+n).classList.add('visible');draw();persist();showToast('사진을 보고서에 넣었어요.')}catch(err){showToast(err.message||'사진을 불러올 수 없어요.')}e.target.value=''});$('removePhoto'+n).addEventListener('click',()=>{state['photo'+n]='';$('photoPreview'+n).removeAttribute('src');$('photoPreview'+n).classList.remove('visible');draw();persist();showToast('사진을 삭제했어요.')})}
+$('backupBtn').addEventListener('click',()=>{update();persist();const filename='지질답사_기록_'+(state.name.trim().replace(/[\\/:*?"<>|]/g,'')||'학생')+'.json';downloadBlob(JSON.stringify({app:'hwaseong-field-journal',version:2,data:state},null,2),filename,'application/json;charset=utf-8');showToast('나중에 불러올 수 있는 백업 파일을 저장했어요.')});$('importBtn').addEventListener('click',()=>$('importFile').click());$('importFile').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{const obj=JSON.parse(await f.text());if(obj.app!=='hwaseong-field-journal'||!obj.data||typeof obj.data!=='object')throw Error('이 앱에서 저장한 백업 파일이 아니에요.');if(!confirm('현재 작성 중인 내용을 백업 파일의 내용으로 바꿀까요?'))return;for(const k of [...fields,'photo1','photo2'])state[k]=typeof obj.data[k]==='string'?obj.data[k]:'';sync();persist();goStep(0);showToast('백업한 내용을 불러왔어요.')}catch(err){showToast(err.message||'파일을 불러올 수 없어요.')}finally{e.target.value=''}});
+$('clearBtn').addEventListener('click',()=>{if(!confirm('작성한 내용과 사진을 모두 지우고 새 보고서를 만들까요?\n필요하면 먼저 기록 백업을 해 주세요.'))return;for(const k of [...fields,'photo1','photo2'])state[k]='';sync();persist();goStep(0);showToast('새 보고서를 시작해요!')});
+$('reportForm').addEventListener('submit',e=>e.preventDefault());
+})();
+</script>
+</body></html>
